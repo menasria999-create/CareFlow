@@ -1,0 +1,33 @@
+name: Build CareFlow Client
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    
+    - name: Install dependencies
+      run: |
+        cd client
+        npm install
+    
+    - name: Build project
+      run: |
+        cd client
+        npm run build
+    
+    - name: Upload dist as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: careflow-dist
+        path: client/dist
