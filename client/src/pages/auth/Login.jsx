@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'C:/Users/ABS PC ADRHM/Desktop/CareFlow/client/src/context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import api from 'C:/Users/ABS PC ADRHM/Desktop/CareFlow/client/src/services/api';
 
 const Login = () => {
