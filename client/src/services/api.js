@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-// ✅ هذا هو التغيير الحاسم: الرابط الثابت للخادم الخلفي على Railway
-const API_URL = 'https://careflow-production-3da8.up.railway.app/api';
+// ✅ الآن نستخدم المتغير الذي تم تمريره من vite.config.js
+// إذا لم ينجح، سيستخدم الرابط المحلي كحل احتياطي
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
     baseURL: API_URL,
